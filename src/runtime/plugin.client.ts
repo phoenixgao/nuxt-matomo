@@ -24,14 +24,14 @@ export default defineNuxtPlugin((nuxtApp) => {
   let tracker: any;
 
   if (options.blockLoading) {
-    waitUntil(() => window.hasOwnProperty('Piwik')).then(() => {
+    waitUntil(() => window.Piwik).then(() => {
       tracker = createTracker(options);
       if (tracker) {
         setupTracker(nuxtApp, tracker, options);
       }
     })
   } else {
-    if (window.hasOwnProperty('Piwik')) {
+    if (window.Piwik) {
       tracker = createTracker(options)
       setupTracker(nuxtApp, tracker, options)
     } else {
@@ -173,8 +173,8 @@ function setupTracker(nuxtApp, tracker: any, options: MatomoOptions) {
     window.location.host
 
   const trackRoute = ({ to, from }) => {
-    let url = baseUrl + to.fullPath
-    let referrer = from && from.fullPath
+    const url = baseUrl + to.fullPath
+    const referrer = from && from.fullPath
     tracker.setDocumentTitle(document.title)
     tracker.setCustomUrl(url)
     if (referrer) {
