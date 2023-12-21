@@ -3,7 +3,7 @@ Get your module up and running quickly.
 
 Find and replace all on all files (CMD+SHIFT+F):
 - Name: Matomo Module
-- Package name: nuxt-matomo
+- Package name: @phoenixgao/nuxt-matomo
 - Description: My new Nuxt module
 -->
 
@@ -17,7 +17,7 @@ Find and replace all on all files (CMD+SHIFT+F):
 Matomo module for Nuxt.js 3
 
 - [✨ &nbsp;Release Notes](/CHANGELOG.md)
-<!-- - [🏀 Online playground](https://stackblitz.com/github/phoenixgao/nuxt3-matomo?file=playground%2Fapp.vue) -->
+<!-- - [🏀 Online playground](https://stackblitz.com/github/phoenixgao/nuxt-matomo?file=playground%2Fapp.vue) -->
 <!-- - [📖 &nbsp;Documentation](https://example.com) -->
 
 ## Features
@@ -29,17 +29,17 @@ Matomo module for Nuxt.js 3
 
 ## Quick Setup
 
-1. Add `nuxt-matomo` dependency to your project
+1. Add `@phoenixgao/nuxt-matomo` dependency to your project
 
 ```bash
 # Using pnpm
-pnpm add -D nuxt-matomo
+pnpm add -D @phoenixgao/nuxt-matomo
 
 # Using yarn
-yarn add --dev nuxt-matomo
+yarn add --dev @phoenixgao/nuxt-matomo
 
 # Using npm
-npm install --save-dev nuxt-matomo
+npm install --save-dev @phoenixgao/nuxt-matomo
 ```
 
 2. Add `nuxt-matomo` to the `modules` section of `nuxt.config.ts`
