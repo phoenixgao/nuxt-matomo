@@ -1,4 +1,4 @@
-import { defineNuxtModule, addPlugin, createResolver } from '@nuxt/kit'
+import { defineNuxtModule, addPlugin, createResolver, addTemplate } from '@nuxt/kit'
 import { defu } from 'defu'
 
 // Module options TypeScript interface definition
@@ -50,10 +50,6 @@ export default defineNuxtModule<ModuleOptions>({
     options.trackerUrl = options.trackerUrl || options.matomoUrl + 'piwik.php'
     options.scriptUrl = options.scriptUrl || options.matomoUrl + 'piwik.js'
 
-    // if (options.addNoProxyWorkaround) {
-    //   options.apiMethodsList = options.apiMethodsList || require('./api-methods-list.json')
-    // }
-
     const head = nuxt.options.app.head
     head.script = head.script ?? []
 
@@ -77,6 +73,8 @@ export default defineNuxtModule<ModuleOptions>({
       doNotTrack: options.doNotTrack,
     })
 
+    addTemplate(resolver.resolve('./utils'))
+    addTemplate(resolver.resolve('./apiMethods'))
     // Do not add the extension since the `.ts` will be transpiled to `.mjs` after `npm run prepack`
     addPlugin(resolver.resolve('./runtime/plugin.client'))
   }
