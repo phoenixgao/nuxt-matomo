@@ -1,6 +1,5 @@
 {
   "name": "@phoenixgao/nuxt-matomo",
-  "version": "1.0.1",
   "description": "Matomo module for Nuxt 3",
   "repository": "https://github.com/phoenixgao/nuxt-matomo",
   "license": "MIT",
