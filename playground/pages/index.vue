@@ -1,9 +1,11 @@
 <template>
   <div>
     Nuxt module playground!
-  </div>
-  <div>
-    <nuxt-link to="/a">Link to a</nuxt-link>
+    <div>
+      <nuxt-link to="/a">
+        Link to a
+      </nuxt-link>
+    </div>
   </div>
 </template>
 

@@ -172,16 +172,21 @@ function setupTracker(nuxtApp, tracker: any, options: MatomoOptions) {
     '//' +
     window.location.host
 
-  const trackRoute = ({ to }) => {
+  const trackRoute = ({ to, from }) => {
+    let url = baseUrl + to.fullPath
+    let referrer = from && from.fullPath
     tracker.setDocumentTitle(document.title)
-    tracker.setCustomUrl(baseUrl + to.fullPath)
+    tracker.setCustomUrl(url)
+    if (referrer) {
+      tracker.setReferrerUrl(baseUrl + referrer)
+    }
     tracker.trackPageView(document.title)
   }
 
   // every time the route changes (fired on initialization too)
   router.afterEach((to, from) => {
     setTimeout(() => {
-      trackRoute({ to })
+      trackRoute({ to, from })
     }, options.trackDelay)
   })
 }

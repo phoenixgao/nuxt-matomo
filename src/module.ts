@@ -24,7 +24,7 @@ export default defineNuxtModule<ModuleOptions>({
     configKey: 'matomo'
   },
   // Default configuration options of the Nuxt module
-  defaults: (nuxt) => ({
+  defaults: () => ({
     trackDelay: 350,
     debug: false,
     verbose: false,
